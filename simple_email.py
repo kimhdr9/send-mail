@@ -6,6 +6,7 @@ HOST=os.getenv('SMTP_HOST')
 PORT=os.getenv('SMTP_PORT')
 FROM=os.getenv('SMTP_FROM')
 TO=os.getenv('SMTP_TO')
+print(f"host : {HOST}")
 PASSWORD=getpass.getpass("Entrez le mot de passe :")
 
 MESSAGE = """ Subject : Mail sent using python
