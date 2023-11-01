@@ -6,6 +6,8 @@ import os
 
 sender_email = os.getenv('SMTP_FROM')
 receiver_email = os.getenv('SMTP_TO')
+port=os.getenv('SMTP_PORT')
+host=os.getenv('SMTP_HOST')
 password = getpass.getpass("Type your password and press enter:")
 
 message = MIMEMultipart("alternative")
@@ -42,7 +44,7 @@ message.attach(part2)
 
 # Create secure connection with server and send email
 context = ssl.create_default_context()
-with smtplib.SMTP_SSL(os.getenv('SMTP_HOST'), os.getenv('SMTP_PORT'), context=context) as server:
+with smtplib.SMTP_SSL(host, port, context=context) as server:
     server.login(sender_email, password)
     server.sendmail(
         sender_email, receiver_email, message.as_string()
