@@ -6,7 +6,7 @@ import os
 
 sender_email = os.getenv('SMTP_FROM')
 receiver_email = os.getenv('SMTP_TO')
-password = getpass.getpass("Type your password and press enter:")
+password = getpass.getpass("Tapez votre mot de passe puis tapez sur la touche 'Entrée' :")
 
 message = MIMEMultipart("alternative")
 message["Subject"] = "multipart test"

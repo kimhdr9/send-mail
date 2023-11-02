@@ -12,5 +12,6 @@ export SMTP_TO=""
 ### remplacer la partie droite par des valeurs
 ### puis . .environnements.bash
 
-> python simple_email.py
+> . .environements.bash
+> python email_html.py
 > entrer le mot de passe de votre adresse mail
